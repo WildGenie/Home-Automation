@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="Dashboard.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Dashboard"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Name="Image_Wallpaper" Grid.RowSpan="2" Source="ms-appx:///Resource/Wallpaper/Huawei_P7_home_wallpaper_07_DroidViews.jpg" Stretch="UniformToFill"/>
+        <Frame Name="Frame_MainFrame" Grid.RowSpan="2"/>
+
+            <Border Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#69df" Offset="-0.5"/>
+                    <GradientStop Color="#fff" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <Border Name="Border_Home" CornerRadius="0,0,10,10" Margin="10,0,10,10" VerticalAlignment="Top" Width="160" PointerReleased="Border_PointerReleased">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Resource/Images/Icon_Select.png"/>
+                            </Border.Background>
+                            <Image HorizontalAlignment="Left" Height="70" Margin="10" Source="Resource/Images/Home_Icon_150.png"/>
+                        </Border>
+                        <Border Name="Border_Favorites" CornerRadius="0,0,10,10" Margin="10,0,10,10" VerticalAlignment="Top" Width="160" PointerReleased="Border_PointerReleased">
+                            <Image HorizontalAlignment="Left" Height="70" Margin="10" Source="Resource/Images/Favorite_Icon_150.png"/>
+                        </Border>
+                        <Border Name="Border_Rooms" CornerRadius="0,0,10,10" Margin="10,0,10,10" VerticalAlignment="Top" Width="160" PointerReleased="Border_PointerReleased">
+                            <Image HorizontalAlignment="Left" Height="70" Margin="10" Source="Resource/Images/Icon_Room_150.png"/>
+                        </Border>
+                        <Border Name="Border_WaterPump" CornerRadius="0,0,10,10" Margin="10,0,10,10" VerticalAlignment="Top" Width="160" PointerReleased="Border_PointerReleased">
+                            <Image HorizontalAlignment="Left" Height="70" Margin="10" Source="Resource/Images/Icon_Water_150.png"/>
+                        </Border>
+                        <Border Name="Border_Geyser" CornerRadius="0,0,10,10" Margin="10,0,10,10" VerticalAlignment="Top" Width="160" PointerReleased="Border_PointerReleased">
+                            <Image HorizontalAlignment="Left" Height="70" Margin="10" Source="Resource/Images/Icon_Thermometer_150.png"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1" HorizontalAlignment="Center">
+                    
+                </Grid>
+                
+                <Grid Grid.Column="2">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Border Name="Border_Settings" CornerRadius="0,0,10,10" Margin="10,0,10,10" VerticalAlignment="Top" Width="160" PointerReleased="Border_PointerReleased">
+                            <Image HorizontalAlignment="Left" Height="70" Margin="10" Source="Resource/Images/Icon_Settings_150.png"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        
+    </Grid>
+</Page>

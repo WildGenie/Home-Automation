@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{6FA7E46A-4099-4189-A1F5-CB40A237B792}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dashboard</RootNamespace>
+    <AssemblyName>Dashboard</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Dashboard_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="ClassDiagram.cd" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Core\Device.cs" />
+    <Compile Include="Library\Core\Home.cs" />
+    <Compile Include="Library\Core\Room.cs" />
+    <Compile Include="Library\Core\Sensor\AmbientLight.cs" />
+    <Compile Include="Library\Core\Sensor\PassiveIR.cs" />
+    <Compile Include="Library\Core\Sensor\Temperature.cs" />
+    <Compile Include="Library\UI\DashboardButton.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Configuration.xaml.cs">
+      <DependentUpon>Page_Configuration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Devices.xaml.cs">
+      <DependentUpon>Page_Devices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Home.xaml.cs">
+      <DependentUpon>Page_Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Rooms.xaml.cs">
+      <DependentUpon>Page_Rooms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Temp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Dashboard_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Resource\Home\Status\Icon_Email_Service_150184.png" />
+    <Content Include="Resource\Home\Status\Icon_Geyser_Off150.png" />
+    <Content Include="Resource\Home\Status\Icon_Geyser_On150.png" />
+    <Content Include="Resource\Home\Status\Icon_Network_Available_150.png" />
+    <Content Include="Resource\Home\Status\Icon_Network_Error150.png" />
+    <Content Include="Resource\Home\Status\Icon_WaterPump_Off274.png" />
+    <Content Include="Resource\Home\Status\Icon_WaterPump_On274.png" />
+    <Content Include="Resource\Images\Devices\Bulb_130.png" />
+    <Content Include="Resource\Images\Devices\Fan_130.png" />
+    <Content Include="Resource\Images\Devices\Lamp1_130.png" />
+    <Content Include="Resource\Images\Devices\Lamp2_130.png" />
+    <Content Include="Resource\Images\Devices\Plug_130.png" />
+    <Content Include="Resource\Images\Devices\Socket_130.png" />
+    <Content Include="Resource\Images\Favorite_Icon_150.png" />
+    <Content Include="Resource\Images\Home_Icon_150.png" />
+    <Content Include="Resource\Images\Icon_Lock_250187.png" />
+    <Content Include="Resource\Images\Icon_Room_150.png" />
+    <Content Include="Resource\Images\Icon_Select.png" />
+    <Content Include="Resource\Images\Icon_Settings_150.png" />
+    <Content Include="Resource\Images\Icon_Thermometer_150.png" />
+    <Content Include="Resource\Images\Icon_Unlock_250262.png" />
+    <Content Include="Resource\Images\Icon_Water_150.png" />
+    <Content Include="Resource\Images\RoomTile\Attic.png" />
+    <Content Include="Resource\Images\RoomTile\Basement.png" />
+    <Content Include="Resource\Images\RoomTile\Fireplace.png" />
+    <Content Include="Resource\Images\RoomTile\Flower1.png" />
+    <Content Include="Resource\Images\RoomTile\Flower2.png" />
+    <Content Include="Resource\Images\RoomTile\Flower3.png" />
+    <Content Include="Resource\Images\RoomTile\Kitchen.png" />
+    <Content Include="Resource\Images\RoomTile\Pillow.png" />
+    <Content Include="Resource\Images\RoomTile\Room.png" />
+    <Content Include="Resource\Images\RoomTile\TV.png" />
+    <Content Include="Resource\Images\RoomTile\Window.png" />
+    <Content Include="Resource\Images\Room\AmbientLight_48.png" />
+    <Content Include="Resource\Images\Room\GoBack_53.png" />
+    <Content Include="Resource\Images\Room\HumanDetected_48.png" />
+    <Content Include="Resource\Images\Room\HumanDetected_None_48.png" />
+    <Content Include="Resource\Images\Room\Temprature_48.png" />
+    <Content Include="Resource\Images\Toolbar\Add_48.png" />
+    <Content Include="Resource\Images\Toolbar\File_Save.png" />
+    <Content Include="Resource\Images\Toolbar\Remove_48.png" />
+    <Content Include="Resource\SmallBackgroung\Room1.jpg" />
+    <Content Include="Resource\Wallpaper\Huawei_P7_home_wallpaper_06_DroidViews.jpg" />
+    <Content Include="Resource\Wallpaper\Huawei_P7_home_wallpaper_07_DroidViews.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Page_Configuration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Page_Devices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Page_Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Page_Rooms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Windows\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
