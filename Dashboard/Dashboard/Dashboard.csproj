@@ -90,6 +90,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="ClassDiagram.cd" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,7 @@
       <DependentUpon>Page_Rooms.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Temp.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -142,7 +144,12 @@
     <Content Include="Resource\Home\Status\Icon_Network_Error150.png" />
     <Content Include="Resource\Home\Status\Icon_WaterPump_Off274.png" />
     <Content Include="Resource\Home\Status\Icon_WaterPump_On274.png" />
+    <Content Include="Resource\Images\Devices\Bulb_130.png" />
     <Content Include="Resource\Images\Devices\Fan_130.png" />
+    <Content Include="Resource\Images\Devices\Lamp1_130.png" />
+    <Content Include="Resource\Images\Devices\Lamp2_130.png" />
+    <Content Include="Resource\Images\Devices\Plug_130.png" />
+    <Content Include="Resource\Images\Devices\Socket_130.png" />
     <Content Include="Resource\Images\Favorite_Icon_150.png" />
     <Content Include="Resource\Images\Home_Icon_150.png" />
     <Content Include="Resource\Images\Icon_Lock_250187.png" />
@@ -201,7 +208,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="System\Windows\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

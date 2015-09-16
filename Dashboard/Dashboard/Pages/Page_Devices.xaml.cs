@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using System.Windows;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -43,6 +46,37 @@ namespace Dashboard.Pages
         {
             var myList = e.Parameter as object[];
             LoadDevices((Library.Core.Room)myList[0], (ushort)myList[1]);
+
+            Task Task_UpdateSensors = new Task(async () =>
+            {
+                if (((Library.Core.Room)myList[0]).Sensors.AmbientLight == null)
+                {
+                    ((Library.Core.Room)myList[0]).Sensors.AmbientLight = new Library.Core.Sensor.AmbientLight();
+                }
+                if (((Library.Core.Room)myList[0]).Sensors.PassiveIR == null)
+                {
+                    ((Library.Core.Room)myList[0]).Sensors.PassiveIR = new Library.Core.Sensor.PassiveIR();
+                }
+                if (((Library.Core.Room)myList[0]).Sensors.Temperature == null)
+                {
+                    ((Library.Core.Room)myList[0]).Sensors.Temperature = new Library.Core.Sensor.Temperature();
+                }
+
+                while (true)
+                {
+                    await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                                        () =>
+                                        {
+                                            lbl_PIR_Status.Text = (((Library.Core.Room)myList[0]).Sensors.PassiveIR.HumanDetected == true) ? "Detected" : "None";
+                                            lbl_LightIntensity.Text = ((Library.Core.Room)myList[0]).Sensors.AmbientLight.RawData.ToString();
+                                            lbl_Temp_C.Text = ((Library.Core.Room)myList[0]).Sensors.Temperature.Celsius.ToString() + " °C";
+
+                                        });
+
+                    await Task.Delay(1000);
+                }
+            });
+            Task_UpdateSensors.Start();
         }
 
         public void LoadDevices(Library.Core.Room Room, ushort RoomNumber)
@@ -72,6 +106,7 @@ namespace Dashboard.Pages
 
                 ListView_Devices.Items.Add(_Dev);
             }
+            txt_RoomName.Text = Room.RoomName;
         }
 
         private void ListView_Devices_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)

@@ -60,7 +60,7 @@ namespace Dashboard.Library.Core
         }
 
         [DataMember]
-        public UInt16 Id { get; set; }
+        public ushort Id { get; set; }  
 
         [DataMember]
         public string Name { get; set; }
@@ -79,7 +79,7 @@ namespace Dashboard.Library.Core
         /// Provides current status of the device
         /// </summary>
         public StatusEnum Status { get; set; }
-
+        
         /// <summary>
         /// Turns on device
         /// </summary>

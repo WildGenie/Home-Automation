@@ -33,7 +33,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <ListView Name="Lst_Main" DisplayMemberPath="RoomName" Margin="10,10,10,5" BorderBrush="White" ScrollViewer.VerticalScrollBarVisibility="Visible" DoubleTapped="lst_Main_DoubleTapped"/>
+                        <ListView Name="Lst_Main" DisplayMemberPath="RoomName" Margin="10,10,10,5" BorderBrush="White" ScrollViewer.VerticalScrollBarVisibility="Visible" DoubleTapped="Lst_Main_DoubleTapped" Tapped="Lst_Main_Tapped"/>
                     </Grid>
                 </Border>
                 
@@ -43,8 +43,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -67,8 +67,71 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+
+                    <Border Grid.Row="2" Background="#eee" CornerRadius="20" Margin="10" Height="Auto">
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="5">
+                                    <Image Name="Img_Btn_AddNewDevice" Height="40" Margin="5" Source="ms-appx:///Resource/Images/Toolbar/Add_48.png" Tapped="Img_Btn_AddNewDevice_Tapped"/>
+                                    <Image Name="Img_Btn_RemoveDevice" Height="40" Margin="5" Source="ms-appx:///Resource/Images/Toolbar/Remove_48.png" Tapped="Img_Btn_RemoveDevice_Tapped"/>
+                                </StackPanel>
+                                <ListView Name="Lst_Devices" DisplayMemberPath="Name" Tapped="Lst_Devices_Tapped"/>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Name="txt_DeviceName" Margin="5" Text="{Binding ElementName=Lst_Devices, Mode=TwoWay, Path=SelectedItem.Name}"/>
+                                    <ComboBox Name="cmb_DevicePin" Grid.Column="1" Margin="5" Width="90">
+                                        <ComboBoxItem>D0</ComboBoxItem>
+                                        <ComboBoxItem>D1</ComboBoxItem>
+                                        <ComboBoxItem>D3</ComboBoxItem>
+                                        <ComboBoxItem>D4</ComboBoxItem>
+                                        <ComboBoxItem>D5</ComboBoxItem>
+                                        <ComboBoxItem>D6</ComboBoxItem>
+                                        <ComboBoxItem>D7</ComboBoxItem>
+                                        <ComboBoxItem>D8</ComboBoxItem>
+                                        <ComboBoxItem>D9</ComboBoxItem>
+                                        <ComboBoxItem>D10</ComboBoxItem>
+                                        <ComboBoxItem>D11</ComboBoxItem>
+                                        <ComboBoxItem>D12</ComboBoxItem>
+                                        <ComboBoxItem>A2</ComboBoxItem>
+                                        <ComboBoxItem>A3</ComboBoxItem>
+                                    </ComboBox>
+
+                                </Grid>
+                                <ListView Name="Lst_DeviceImage" Grid.Row="1" Height="150" Margin="10">
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <ItemsWrapGrid Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Image Margin="10" Source="{Binding Path=ImagePath}" Width="100"/>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                        </Grid>
+                    </Border>
                     
-                    <Image Name="Img_Btn_Save" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Height="48" Source="ms-appx:///Resource/Images/Toolbar/File_Save.png" Tapped="Img_Btn_Save_Tapped"/>
+                    <Image Name="Img_Btn_Save" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Height="48" Source="ms-appx:///Resource/Images/Toolbar/File_Save.png" Tapped="Img_Btn_Save_Tapped"/>
                 </Grid>
             </Border>
         </Grid>

@@ -10,7 +10,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="100"/>
+            <!--<RowDefinition Height="100"/>-->
         </Grid.RowDefinitions>
 
         <Grid Margin="10">
@@ -35,16 +35,16 @@
                     <Image Grid.Column="1" Width="48" Source="ms-appx:///Resource/Images/Room/AmbientLight_48.png"/>
                     <Image Grid.Column="2" Source="ms-appx:///Resource/Images/Room/Temprature_48.png" Width="48"/>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="5">None</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="5">500 / 1023</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="5">27 °C</TextBlock>
+                    <TextBlock Name="lbl_PIR_Status" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="5">None</TextBlock>
+                    <TextBlock Name="lbl_LightIntensity" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="5">500 / 1023</TextBlock>
+                    <TextBlock Name="lbl_Temp_C" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="5">27 °C</TextBlock>
                     
                 </Grid>
             </StackPanel>
 
-            <Grid VerticalAlignment="Bottom" Margin="20">
+            <!--<Grid VerticalAlignment="Bottom" Margin="20">
                 <Image Width="53" Source="ms-appx:///Resource/Images/Room/GoBack_53.png"/>
-            </Grid>
+            </Grid>-->
 
             <Border Grid.Column="1" Margin="20" CornerRadius="10" Background="#FFF">
                 <ListView Margin="10" Name="ListView_Devices" DoubleTapped="ListView_Devices_DoubleTapped">

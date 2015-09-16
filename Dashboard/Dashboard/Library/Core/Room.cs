@@ -35,13 +35,14 @@ namespace Dashboard.Library.Core
         /// <summary>
         /// Provides access to the sensors of the room
         /// </summary>
-        public struct Sensors
+        public struct SensorSturct
         {
             public Sensor.AmbientLight AmbientLight;
             public Sensor.PassiveIR PassiveIR;
             public Sensor.Temperature Temperature;
         }
-        
+
+        public SensorSturct Sensors = new SensorSturct();
 
     }
 }

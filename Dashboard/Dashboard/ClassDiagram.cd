@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Dashboard.Library.Core.Device">
+    <Position X="8.75" Y="3" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Dashboard.Library.Core.Device.StatusEnum" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Library\Core\Device.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Dashboard.Library.Core.Device.PinsEnum" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Library\Core\Device.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABACAAAEAAAAAAAAAAACAIQAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Library\Core\Device.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dashboard.Library.Core.Home">
+    <Position X="5.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAwCAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Library\Core\Home.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dashboard.Library.Core.Room">
+    <Position X="5.75" Y="3.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="Dashboard.Library.Core.Room.SensorSturct">
+        <TypeIdentifier>
+          <NewMemberFileName>Library\Core\Room.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAABA=</HashCode>
+      <FileName>Library\Core\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dashboard.Library.Core.Sensor.AmbientLight">
+    <Position X="3.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Library\Core\Sensor\AmbientLight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dashboard.Library.Core.Sensor.PassiveIR">
+    <Position X="5" Y="7.75" Width="5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Dashboard.Library.Core.Sensor.PassiveIR.EnumHumanPresenseStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Library\Core\Sensor\PassiveIR.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Library\Core\Sensor\PassiveIR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dashboard.Library.Core.Sensor.Temperature">
+    <Position X="10.25" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAIAAAAAAACAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Library\Core\Sensor\Temperature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dashboard.Library.UI.DashboardButton">
+    <Position X="3.25" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAEAAAAAAAgAASAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Library\UI\DashboardButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
